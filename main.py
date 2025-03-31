@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 
 app = Dash()
-app=server
+server=app.server
 df = pd.read_csv('WorldCupDataset.csv',header=[0])
 app.layout = html.Div([
     html.H1(children="World Cup Finals Winners and Runner ups", style={"text-align":"center"}),
@@ -47,4 +47,4 @@ def update_output(year):
     return fig,WinnerString,RunnerupString
 
 if __name__=='__main__':
-    app.run(debug=False)
+    app.run_server(debug=False)
